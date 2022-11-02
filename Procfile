@@ -1,1 +1,1 @@
-web: npx lerna bootstrap && npm run start --scope server-node
+web: npx lerna bootstrap && npx lerna run start --scope server-node

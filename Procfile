@@ -1,1 +1,1 @@
-web: cd packages/server-node && npm run start
+web: npx lerna bootstrap && npm run start --scope server-node

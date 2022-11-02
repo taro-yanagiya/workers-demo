@@ -24,7 +24,7 @@ export async function loader(): Promise<TypedResponse> {
       // SERVER_URL: "https://workers-demo-server.taro-yanagiya.workers.dev",
       SERVER_WS_URL: "ws://127.0.0.1:8787",
       // SERVER_WS_URL: "wss://workers-demo-server.taro-yanagiya.workers.dev",
-      SERVER_NODE_WS_URL: "wss://workers-demo.herokuapp.com:3000/",
+      SERVER_NODE_WS_URL: "wss://workers-demo.herokuapp.com/",
     },
   });
 }

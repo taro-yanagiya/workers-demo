@@ -18,6 +18,8 @@ interface DraggingData {
   startMouseY: number;
 }
 
+export type Status = "connected" | "disconnected";
+
 export class App {
   canvas: Canvas;
   context: Context;
@@ -34,8 +36,17 @@ export class App {
     this.context = c;
   }
 
-  async startApp(roomId: RoomId, useNode = false): Promise<void> {
-    await this.wsConnection.connect(roomId, useNode);
+  async startApp(
+    roomId: RoomId,
+    statusChanged: (status: Status) => void,
+    memberChanged: (count: number) => void,
+    useNode = false,
+  ): Promise<void> {
+    await this.wsConnection.connect(
+      roomId,
+      () => statusChanged("disconnected"),
+      useNode,
+    );
 
     setInterval(() => this.draw(), 10);
 
@@ -52,6 +63,7 @@ export class App {
         case MessageType.Server.READY: {
           const sessionId = data.getUint8(1);
           console.log(`READY session ID: ${sessionId}`);
+          statusChanged("connected");
           break;
         }
         case MessageType.Server.CURSOR: {
@@ -90,12 +102,14 @@ export class App {
           const id = data.getUint8(1);
           console.log(`JOINED: ${id}`);
           this.addMember(id as SessionId);
+          memberChanged(this.members.length + 1);
           break;
         }
         case MessageType.Server.QUIT: {
           const id = data.getUint8(1);
           console.log(`QUIT: ${id}`);
           this.removeMember(id as SessionId);
+          memberChanged(this.members.length + 1);
           break;
         }
         case MessageType.Server.ERROR: {

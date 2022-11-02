@@ -1,8 +1,7 @@
 import { ObjectId, SessionId } from "shared/src/types";
-import { Canvas, Dragging } from "./Canvas";
+import { Dragging } from "./Canvas";
 
 export class Ellipsis {
-  canvas: Canvas;
   id: ObjectId;
   originalX: number;
   originalY: number;
@@ -14,7 +13,6 @@ export class Ellipsis {
   private draggings: Dragging[] = [];
 
   constructor(
-    canvas: Canvas,
     id: ObjectId,
     x: number,
     y: number,
@@ -22,7 +20,6 @@ export class Ellipsis {
     color: string,
     stretchingFactor: number = 0.01,
   ) {
-    this.canvas = canvas;
     this.id = id;
     this.originalX = x;
     this.originalY = y;
@@ -106,10 +103,6 @@ export class Ellipsis {
       this.originalX = (d.originX + d.dx) / draggingsCount;
       this.originalY = (d.originY + d.dy) / draggingsCount;
     });
-
-    // if (this.originalX < -this.radius || this.canvas.) {
-
-    // }
 
     this.updateStretch();
   }

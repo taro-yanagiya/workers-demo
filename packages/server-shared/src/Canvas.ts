@@ -1,7 +1,16 @@
 import { MessageType } from "shared/src/message";
-import { ObjectId, SessionId } from "shared/src/types";
+import { SessionId } from "shared/src/types";
 import { Ellipsis } from "./Ellipsis";
+import { generate } from "./objects-generator";
 import { Room } from "./Room";
+
+const OBJ_COUNT = 10;
+
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 500;
+
+const MIN_RADIUS = 15;
+const MAX_RADIUS = 100;
 
 export interface Dragging {
   sessionId: SessionId;
@@ -19,11 +28,13 @@ type DraggingData = {
 
 export class Canvas {
   room: Room;
-  objects: Ellipsis[] = [
-    new Ellipsis(this, 0 as ObjectId, 50, 50, 50, "blue"),
-    new Ellipsis(this, 1 as ObjectId, 94, 66, 50, "red"),
-    new Ellipsis(this, 2 as ObjectId, 560, 310, 25, "yellow"),
-  ];
+  objects: Ellipsis[] = generate(
+    CANVAS_WIDTH,
+    CANVAS_HEIGHT,
+    MIN_RADIUS,
+    MAX_RADIUS,
+    OBJ_COUNT,
+  );
   draggingData: Map<SessionId, DraggingData> = new Map();
 
   constructor(room: Room) {

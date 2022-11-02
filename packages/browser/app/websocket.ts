@@ -7,7 +7,11 @@ export class WebSocketConnection {
 
   readonly callbacks: Map<string, OnMessageCallback> = new Map();
 
-  connect = async (roomId: string, useNode = false): Promise<void> => {
+  async connect(
+    roomId: string,
+    onClose: () => void,
+    useNode = false,
+  ): Promise<void> {
     if (useNode) {
       this.webSocket = new WebSocket(
         `${window.ENV.SERVER_NODE_WS_URL}/rooms/${roomId}`,
@@ -40,14 +44,16 @@ export class WebSocketConnection {
         });
       });
       this.webSocket.addEventListener("error", (_) => {
+        onClose();
         reject(new Error("websocket error"));
       });
       this.webSocket.addEventListener("close", (event) => {
         console.log("Connection closed");
+        onClose();
         reject(new Error("connection closed"));
       });
     });
-  };
+  }
 
   addOnMessageCallback(callback: (message: ArrayBuffer) => void): string {
     const id = uuid();

@@ -1,6 +1,7 @@
 import type { RoomId } from "@shared/types";
 import type { FC } from "react";
-import { useEffect, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
+import type { Status } from "./app";
 import { App } from "./app";
 
 interface Props {
@@ -8,9 +9,18 @@ interface Props {
   height: number;
   roomId: RoomId;
   useNode?: boolean;
+  onStatusChanged: (status: Status) => void;
+  onMemberChanged: (count: number) => void;
 }
 
-const Canvas: FC<Props> = ({ width, height, roomId, useNode }) => {
+const Canvas: FC<Props> = memo(function Canvas({
+  width,
+  height,
+  roomId,
+  useNode,
+  onStatusChanged,
+  onMemberChanged,
+}: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const appRef = useRef<App | null>(null);
 
@@ -19,10 +29,15 @@ const Canvas: FC<Props> = ({ width, height, roomId, useNode }) => {
     if (canvas !== null) {
       void (async () => {
         appRef.current = new App(canvas);
-        await appRef.current.startApp(roomId, useNode);
+        await appRef.current.startApp(
+          roomId,
+          onStatusChanged,
+          onMemberChanged,
+          useNode,
+        );
       })();
     }
-  }, [roomId, useNode]);
+  }, [onMemberChanged, onStatusChanged, roomId, useNode]);
 
   return (
     <canvas
@@ -34,6 +49,6 @@ const Canvas: FC<Props> = ({ width, height, roomId, useNode }) => {
       onPointerUp={(e) => appRef?.current?.onPointerUp(e)}
     />
   );
-};
+});
 
 export default Canvas;

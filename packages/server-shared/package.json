@@ -1,0 +1,12 @@
+{
+  "name": "server-shared",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Taro Yanagiya <taro.yanagiya@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "scripts": {},
+  "dependencies": {
+    "shared": "*"
+  }
+}

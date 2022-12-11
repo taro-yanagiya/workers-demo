@@ -1,8 +1,9 @@
 import { WebSocketServer } from "ws";
+import { WebSocketWrapper } from "~/WebSocketWrapper";
 import { Room } from "~server-model/Room";
-import { WebSocketWrapper } from "./WebSocketWrapper";
 
 const port = Number.parseInt(process.env.PORT as string);
+console.log(process.env);
 const wss = new WebSocketServer({ port });
 
 const room = new Room();

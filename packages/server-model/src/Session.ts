@@ -1,8 +1,8 @@
-import { writeString } from "shared/src/buffer-util";
-import { MessageType } from "shared/src/message";
-import { SessionId } from "shared/src/types";
-import { IWebSocket } from "./IWebSocket";
-import { createError, Room } from "./Room";
+import { IWebSocket } from "~/IWebSocket";
+import { createError, Room } from "~/Room";
+import { writeString } from "~shared/buffer-util";
+import { MessageType } from "~shared/message";
+import { SessionId } from "~shared/types";
 
 export class Session {
   room: Room;

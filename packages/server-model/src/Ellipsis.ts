@@ -1,5 +1,5 @@
-import { ObjectId, SessionId } from "shared/src/types";
-import { Dragging } from "./Canvas";
+import { ObjectId, SessionId } from "~shared/types";
+import { Dragging } from "~/Canvas";
 
 export class Ellipsis {
   id: ObjectId;

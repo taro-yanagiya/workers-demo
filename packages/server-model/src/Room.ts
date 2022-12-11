@@ -1,9 +1,9 @@
-import { writeString } from "shared/src/buffer-util";
-import { MessageType } from "shared/src/message";
-import { SessionId } from "shared/src/types";
-import { Canvas } from "./Canvas";
-import { IWebSocket } from "./IWebSocket";
-import { Session } from "./Session";
+import { writeString } from "~shared/buffer-util";
+import { MessageType } from "~shared/message";
+import { SessionId } from "~shared/types";
+import { Canvas } from "~/Canvas";
+import { IWebSocket } from "~/IWebSocket";
+import { Session } from "~/Session";
 
 const MAX_SESSIONS = 256;
 

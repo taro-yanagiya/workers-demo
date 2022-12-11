@@ -1,5 +1,5 @@
-import { MessageType } from "shared/src/message";
-import { SessionId } from "shared/src/types";
+import { MessageType } from "~shared/message";
+import { SessionId } from "~shared/types";
 import { Ellipsis } from "./Ellipsis";
 import { generate } from "./objects-generator";
 import { Room } from "./Room";

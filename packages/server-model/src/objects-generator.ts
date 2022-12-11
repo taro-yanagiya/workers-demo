@@ -1,5 +1,5 @@
-import { ObjectId } from "../../shared/src/types";
-import { Ellipsis } from "./Ellipsis";
+import { Ellipsis } from "~/Ellipsis";
+import { ObjectId } from "~shared/types";
 
 type EllipsisInfo = {
   x: number;

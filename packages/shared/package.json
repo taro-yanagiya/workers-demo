@@ -2,9 +2,7 @@
   "name": "@workers-demo/shared",
   "version": "0.0.0",
   "description": "> TODO: description",
-  "scripts": {
-    "build": "tsc -p ."
-  },
+  "scripts": {},
   "author": "Taro Yanagiya <taro.yanagiya@gmail.com>",
   "license": "ISC",
   "devDependencies": {

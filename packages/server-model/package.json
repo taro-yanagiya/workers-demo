@@ -6,9 +6,7 @@
   "homepage": "",
   "license": "ISC",
   "scripts": {},
-  "dependencies": {
-    "@workers-demo/shared": "^0.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^8.29.0"
   }

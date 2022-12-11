@@ -2,9 +2,10 @@
 
 ## Build
 
-Set your cloudflare account ID first:
-`CLOUDFLARE_ACCOUNT_ID=***`
-`npm run build`
+Set your cloudflare account ID first:  
+```CLOUDFLARE_ACCOUNT_ID=***```
+
+```npm run build```
 
 ## Publish
 

@@ -1,7 +1,7 @@
-import { readString } from "@shared/buffer-util";
-import { MessageType } from "@shared/message";
-import type { ObjectId, RoomId, SessionId } from "@shared/types";
 import type React from "react";
+import { readString } from "~shared/buffer-util";
+import { MessageType } from "~shared/message";
+import type { ObjectId, RoomId, SessionId } from "~shared/types";
 import { Ellipsis } from "./Ellipsis";
 import { Member } from "./Member";
 import { WebSocketConnection } from "./websocket";
@@ -149,6 +149,7 @@ export class App {
   }
 
   onPointerMove = (e: React.PointerEvent<HTMLCanvasElement>): void => {
+    e.preventDefault();
     const bound = this.canvas.getBoundingClientRect();
     const x = e.clientX - bound.left;
     const y = e.clientY - bound.top;

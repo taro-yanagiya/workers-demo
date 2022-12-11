@@ -1,5 +1,7 @@
-import { RoomId } from "@shared/types";
-import { FC, useCallback } from "react";
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+import type { FC } from "react";
+import { useCallback } from "react";
+import type { RoomId } from "~shared/types";
 
 interface Props {
   onRoomIdSubmit: (roomId: RoomId) => void;

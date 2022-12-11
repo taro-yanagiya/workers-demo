@@ -1,6 +1,6 @@
 FROM node:18
 WORKDIR /usr/src/app
 COPY . .
-RUN npx lerna bootstrap
+RUN npm i
 
-CMD ["npx", "lerna", "run", "start", "--scope", "server-node"]
+CMD ["npm", "run", "start", "-w", "@workers-demo/server-node"]

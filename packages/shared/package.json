@@ -1,6 +1,6 @@
 {
-  "name": "shared",
-  "version": "1.0.0",
+  "name": "@workers-demo/shared",
+  "version": "0.0.0",
   "description": "> TODO: description",
   "scripts": {
     "build": "tsc -p ."
@@ -8,14 +8,7 @@
   "author": "Taro Yanagiya <taro.yanagiya@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.29.0",
     "typescript": "^4.8.4"
-  },
-  "homepage": "",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ]
+  }
 }

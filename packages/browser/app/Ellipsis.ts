@@ -1,4 +1,4 @@
-import type { ObjectId } from "@shared/types";
+import type { ObjectId } from "~shared/types";
 
 export class Ellipsis {
   id: ObjectId;

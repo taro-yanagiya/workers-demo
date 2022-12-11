@@ -1,5 +1,5 @@
 {
-  "name": "server-shared",
+  "name": "@workers-demo/server-model",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Taro Yanagiya <taro.yanagiya@gmail.com>",
@@ -7,6 +7,9 @@
   "license": "ISC",
   "scripts": {},
   "dependencies": {
-    "shared": "*"
+    "@workers-demo/shared": "^0.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0"
   }
 }

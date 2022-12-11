@@ -1,5 +1,5 @@
-import { Room } from "server-shared/src/Room";
 import { WebSocketServer } from "ws";
+import { Room } from "~server-model/Room";
 import { WebSocketWrapper } from "./WebSocketWrapper";
 
 const port = Number.parseInt(process.env.PORT as string);

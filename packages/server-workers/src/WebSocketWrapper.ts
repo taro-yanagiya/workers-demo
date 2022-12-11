@@ -1,4 +1,4 @@
-import { IWebSocket } from "server-shared/src/IWebSocket";
+import { IWebSocket } from "~server-model/IWebSocket";
 
 export class WebSocketWrapper implements IWebSocket {
   ws: WebSocket;

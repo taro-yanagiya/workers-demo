@@ -1,4 +1,4 @@
-import { SessionId } from "@shared/types";
+import type { SessionId } from "~shared/types";
 
 export class Member {
   id: SessionId;

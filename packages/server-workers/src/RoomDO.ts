@@ -1,8 +1,8 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
-import { Room } from "server-shared/src/Room";
-import { WebSocketWrapper } from "./WebSocketWrapper";
+import { WebSocketWrapper } from "~/WebSocketWrapper";
+import { Room } from "~server-model/Room";
 
 export class RoomDO {
   state: DurableObjectState;

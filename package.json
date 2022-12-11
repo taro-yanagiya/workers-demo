@@ -1,10 +1,10 @@
 {
-  "name": "root",
+  "name": "@workers-demo/workers-demo",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
-  "devDependencies": {
-    "lerna": "^5.5.4"
+  "scripts": {
+    "build": "npm run build -ws --if-present"
   }
 }

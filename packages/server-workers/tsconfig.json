@@ -20,8 +20,9 @@
     "strict": true,
     "skipLibCheck": true,
     "paths": {
-      "@shared/*": ["../shared/src/*"]
+      "~/*": ["./src/*"],
+      "~server-model/*": ["../server-model/src/*"]
     }
   },
-  "references": [{ "path": "../shared" }]
+  "references": [{ "path": "../server-model" }]
 }

@@ -8,7 +8,7 @@
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
     "dev": "remix build && run-p \"dev:*\"",
     "start": "cross-env NODE_ENV=production npm run dev:wrangler",
-    "publish": "cross-env CLOUDFLARE_ACCOUNT_ID=3277d52cfccdac2df0163d2ddbe3abf9 npx wrangler pages publish public/"
+    "publish": "npx wrangler pages publish public/"
   },
   "dependencies": {
     "@remix-run/cloudflare": "^1.7.2",
